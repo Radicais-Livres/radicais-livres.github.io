@@ -1,0 +1,7 @@
+{
+  "name": "radical-monadical",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
