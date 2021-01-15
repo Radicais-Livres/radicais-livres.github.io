@@ -4,8 +4,8 @@
       <ion-menu content-id="main-content" type="overlay">
         <ion-content>
           <ion-list id="inbox-list">
-            <ion-list-header>Receptacle</ion-list-header>
-            <ion-note>Stuff It Here</ion-note>
+            <ion-list-header>Googolplex by Gogol</ion-list-header>
+            <ion-note>Russian to Concussions</ion-note>
   
             <ion-menu-toggle auto-hide="false" v-for="(p, i) in appPages" :key="i">
               <ion-item @click="selectedIndex = i" router-direction="root" :router-link="p.url" lines="none" detail="false" class="hydrated" :class="{ selected: selectedIndex === i }">
@@ -56,19 +56,19 @@ export default defineComponent({
     const selectedIndex = ref(0);
     const appPages = [
       {
-        title: 'Inbox',
+        title: 'Incoming',
         url: '/folder/Inbox',
         iosIcon: mailOutline,
         mdIcon: mailSharp
       },
       {
-        title: 'Outbox',
+        title: 'Outgoing',
         url: '/folder/Outbox',
         iosIcon: paperPlaneOutline,
         mdIcon: paperPlaneSharp
       },
       {
-        title: 'Favorites',
+        title: 'Round Filed',
         url: '/folder/Favorites',
         iosIcon: heartOutline,
         mdIcon: heartSharp

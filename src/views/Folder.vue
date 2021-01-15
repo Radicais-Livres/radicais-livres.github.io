@@ -17,8 +17,7 @@
       </ion-header>
     
       <div id="container">
-        <strong class="capitalize">{{ folder }}</strong>
-        <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+        <h1>{{ folder }}</h1>
       </div>
     </ion-content>
   </ion-page>
@@ -42,7 +41,7 @@ export default {
   },
   setup() {
     const route = useRoute();
-    const folder = ref(route.params.id || 'Inbox');
+    const folder = ref(route.params.id || 'Co mmunication');
     const matchedFolder = computed(() => route.params.id);
     
     watch(matchedFolder, () => {
@@ -55,6 +54,14 @@ export default {
 </script>
 
 <style scoped>
+
+    ion-title {
+      font-family: 'News Cycle', sans-serif !important;
+      font-weight: 300 !important;
+      font-style: normal !important;
+    }
+
+
 ion-menu-button {
   color: var(--ion-color-primary);
 }
