@@ -1,33 +1,21 @@
-<template>
-  <IonApp>
-    <IonSplitPane content-id="main-content">
-      <ion-menu content-id="main-content" type="overlay">
-        <ion-content>
-          <ion-list id="inbox-list">
-            <ion-list-header>Googolplex by Gogol</ion-list-header>
-            <ion-note>Russian to Concussions</ion-note>
-  
-            <ion-menu-toggle auto-hide="false" v-for="(p, i) in appPages" :key="i">
-              <ion-item @click="selectedIndex = i" router-direction="root" :router-link="p.url" lines="none" detail="false" class="hydrated" :class="{ selected: selectedIndex === i }">
-                <ion-icon slot="start" :ios="p.iosIcon" :md="p.mdIcon"></ion-icon>
-                <ion-label>{{ p.title }}</ion-label>
-              </ion-item>
-            </ion-menu-toggle>
-          </ion-list>
-  
-          <ion-list id="labels-list">
-            <ion-list-header>Labels</ion-list-header>
-  
-            <ion-item v-for="(label, index) in labels" lines="none" :key="index">
-              <ion-icon slot="start" :ios="bookmarkOutline" :md="bookmarkSharp"></ion-icon>
-              <ion-label>{{ label }}</ion-label>
-            </ion-item>
-          </ion-list>
-        </ion-content>
-      </ion-menu>
-      <ion-router-outlet id="main-content"></ion-router-outlet>
-    </IonSplitPane>
-  </IonApp>
+<template lang="pug">
+ionapp
+  ionsplitpane(content-id='main-content')
+    ion-menu(content-id='main-content' type='overlay')
+      ion-content
+        ion-list#inbox-list
+          ion-list-header Googolplex by Gogol
+          ion-note Russian to Concussions
+          ion-menu-toggle(auto-hide='false' v-for='(p, i) in appPages' :key='i')
+            ion-item.hydrated(@click='selectedIndex = i' router-direction='root' :router-link='p.url' lines='none' detail='false' :class='{ selected: selectedIndex === i }')
+              ion-icon(slot='start' :ios='p.iosIcon' :md='p.mdIcon')
+              ion-label {{ p.title }}
+        ion-list#labels-list
+          ion-list-header Labels
+          ion-item(v-for='(label, index) in labels' lines='none' :key='index')
+            ion-icon(slot='start' :ios='bookmarkOutline' :md='bookmarkSharp')
+            ion-label {{ label }}
+    ion-router-outlet#main-content
 </template>
 
 <script lang="ts">
